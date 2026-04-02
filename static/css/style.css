@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f111a;
+    color: #e4e6eb;
+}
+
+.container {
+    padding: 20px 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #00c6ff;
+}
+
+.top-controls {
+    margin-bottom: 20px;
+}
+
+.top-controls input,
+.top-controls button {
+    margin-right: 10px;
+    padding: 8px 14px;
+    background-color: #1a1d2b;
+    color: #e4e6eb;
+    border: 1px solid #2a2f45;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.top-controls button:hover {
+    background-color: #2a2f45;
+}
+
+/* ===== Info Row ===== */
+
+.info-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.info-box {
+    flex: 1;
+    background: #1a1d2b;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.1);
+}
+
+.label {
+    display: block;
+    font-size: 13px;
+    color: #8f9bb3;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* ===== Charts Layout ===== */
+
+.charts {
+    display: flex;
+    gap: 25px;
+}
+
+.chart-card {
+    flex: 1;
+    background: #1a1d2b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.05);
+}
+
+.chart-card h3 {
+    margin-bottom: 15px;
+    color: #8fd3f4;
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.speed-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.speed-control input[type="range"] {
+    width: 150px;
+}
