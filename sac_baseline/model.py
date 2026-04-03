@@ -5,16 +5,22 @@ from .config import *
 class SAC_Actor(nn.Module):
     def __init__(self):
         super().__init__()
-        self.net = nn.Sequential(
+        self.backbone = nn.Sequential(
             nn.Linear(STATE_DIM, 128),
             nn.ReLU(),
             nn.Linear(128, 128),
-            nn.ReLU(),
+            nn.ReLU()
+        )
+        self.head = nn.Sequential(
+            nn.LayerNorm(128),
+            nn.Linear(128, 128),
+            nn.GELU(),
             nn.Linear(128, ACT_DIM)
         )
 
     def forward(self, x):
-        return self.net(x)
+        feat = self.backbone(x)
+        return self.head(feat)
 
     def sample(self, x):
         logits = self.forward(x)
@@ -27,13 +33,14 @@ class SAC_Actor(nn.Module):
 class SAC_Critic(nn.Module):
     def __init__(self):
         super().__init__()
-        self.net = nn.Sequential(
+        self.backbone = nn.Sequential(
             nn.Linear(STATE_DIM, 128),
             nn.ReLU(),
             nn.Linear(128, 128),
-            nn.ReLU(),
-            nn.Linear(128, ACT_DIM)
+            nn.ReLU()
         )
+        self.q = nn.Linear(128, ACT_DIM)
 
-    def forward(self, x):
-        return self.net(x)
+    def forward(self, s):
+        feat = self.backbone(s)
+        return self.q(feat)

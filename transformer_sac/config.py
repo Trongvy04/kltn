@@ -4,35 +4,32 @@ from pathlib import Path
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# ===== DATA =====
+#DATA
 SEQ_LEN = 30
 STATE_DIM = 16
-
 TRANSACTION_COST = 0.002
 INITIAL_CAPITAL = 100000.0
 
 
-# Paths
+#Paths
 BASE_DIR = Path(__file__).resolve().parent
-
 MODEL_PATH = BASE_DIR / "discrete_sac_actor.pth"
 SCALER_PATH = BASE_DIR / "scaler.joblib"
-
 DATA_FOLDER = BASE_DIR.parent / "data"
 
-# ===== TRANSFORMER =====
+#TRANSFORMER
 D_MODEL = 96
 NHEAD = 4
 NUM_LAYERS = 2
 DFF = 192
 
-# ===== SAC =====
+#SAC
 ACT_DIM = 3
 LR_ACTOR = 1e-4
 LR_CRITIC = 1e-4
-GAMMA = 0.97
+GAMMA = 0.9
 TAU = 0.005
-ALPHA = 0.003
+ALPHA = 0.001
 ACTION_NAMES = {
     0: "ALLOC_0",
     1: "ALLOC_35",
