@@ -13,18 +13,12 @@ class TradingEnvEngine:
         self.initial_capital = initial_capital
         self.reset()
 
-    # ==========================================================
-    # RESET
-    # ==========================================================
     def reset(self):
         self.cash = float(self.initial_capital)
         self.shares = 0.0
         self.portfolio_value = float(self.initial_capital)
         self.max_value = float(self.initial_capital)
 
-    # ==========================================================
-    # STEP
-    # ==========================================================
     def step(self, action, close_price):
 
         action_name = ACTION_NAMES.get(action, "UNKNOWN")
@@ -34,7 +28,6 @@ class TradingEnvEngine:
         value_before = self.cash + self.shares * price
         current_position_value = self.shares * price
 
-        # ===== Target allocation =====
         if action == 0:
             target_ratio = 0.0
         elif action == 1:

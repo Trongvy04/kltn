@@ -21,7 +21,7 @@ const priceChart = new Chart(
             labels: labels,
             datasets: [
                 {
-                    label: "Close Price",
+                    label: "Giá đóng cửa",
                     data: priceData,
                     borderColor: "blue",
                     pointRadius: 0,
@@ -39,7 +39,7 @@ const portfolioChart = new Chart(
         data: {
             labels: labels,
             datasets: [{
-                label: "Portfolio Value",
+                label: "Giá trị danh mục",
                 data: portfolioData,
                 borderColor: "green",
                 pointRadius: 0

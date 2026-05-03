@@ -10,16 +10,16 @@
 
 <div class="container">
 
-    <h2>🚀 Transformer SAC Trading Simulator</h2>
+    <h2>Giả lập thị trường giao dịch</h2>
 
     <div class="top-controls">
         <input type="file" id="csvFile" accept=".csv">
 
-        <button onclick="startSimulation()">Start</button>
-        <button onclick="pauseSimulation()">Pause</button>
-        <button onclick="resetSimulation()">Reset</button>
+        <button onclick="startSimulation()">Bắt đầu</button>
+        <button onclick="pauseSimulation()">Tạm dừng</button>
+        <button onclick="resetSimulation()">Cài lại</button>
         <div class="speed-control">
-            <label>Speed:</label>
+            <label>Tốc độ:</label>
             <input type="range" id="speedSlider"
                 min="100"
                 max="5000"
@@ -32,22 +32,22 @@
     <!-- Info Row -->
     <div class="info-row">
         <div class="info-box">
-            <span class="label">Action</span>
+            <span class="label">Hành động</span>
             <span id="action" class="value">-</span>
         </div>
 
         <div class="info-box">
-            <span class="label">Shares</span>
+            <span class="label">Số lượng cổ phiếu</span>
             <span id="shares" class="value">0.0000</span>
         </div>
 
         <div class="info-box">
-            <span class="label">Cash</span>
+            <span class="label">Tiền mặt</span>
             <span id="cash" class="value">0.00</span>
         </div>
 
         <div class="info-box">
-            <span class="label">Total Asset</span>
+            <span class="label">Tổng tài sản</span>
             <span id="portfolio" class="value">0.00</span>
         </div>
     </div>
@@ -55,12 +55,12 @@
     <!-- Charts -->
     <div class="charts">
         <div class="chart-card">
-            <h3>Close Price</h3>
+            <h3>Giá đóng cửa</h3>
             <canvas id="priceChart"></canvas>
         </div>
 
         <div class="chart-card">
-            <h3>Portfolio Value</h3>
+            <h3>Giá trị danh mục</h3>
             <canvas id="portfolioChart"></canvas>
         </div>
     </div>

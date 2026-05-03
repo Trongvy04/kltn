@@ -208,7 +208,7 @@ class SACTrainer:
             self.q2_running = []
             self.entropy_running = []
             val_value = None
-            if val_states is not None and val_prices is not None and ep >= 10:
+            if val_states is not None and val_prices is not None:
                 val_value = self.validate(val_states, val_prices)
                 if val_value > self.best_val_value:
                     self.best_val_value = val_value
